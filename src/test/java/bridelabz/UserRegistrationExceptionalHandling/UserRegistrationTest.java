@@ -67,4 +67,17 @@ public class UserRegistrationTest {
         boolean result = userRegistration.phoneNumber("+91 8376999888");
         Assert.assertEquals(false, result);
     }
+    /**
+     * Unit test for validating password with minimum 8 character
+     */
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        boolean result = userRegistration.password("password@123");
+        Assert.assertEquals(true, result);
+    }
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userRegistration.password("psw@");
+        Assert.assertEquals(false, result);
+    }
 }
